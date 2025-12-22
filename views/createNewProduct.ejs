@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title><%=title%></title>
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/newProduct.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1><%=title%></h1>
+                <a href="/">Back to home</a>
+            </header>
+            <main>
+                <form action="/new" method="post">
+                    <div class="field">
+                        <label for="model">model</label>
+                        <input type="text" name="model" id="model" required>
+                    </div>
+                    <div class="field">
+                        <label for="price">price</label>
+                        <input type="number" name="price" id="price" required>
+                    </div>
+                    <div class="field">
+                        <label for="quantity">quantity</label>
+                        <input type="number" name="quantity" id="quantity" value="1" required>
+                    </div>
+                    <div class="field">
+                        <label for="category">Category</label>
+                        <select name="category" id="category" required>
+                            <option value="" selected>--Please choose an option--</option>
+                            <option value="handgun">Handgun</option>
+                            <option value="rifle">Rifle</option>
+                            <option value="semi automatic rifle">Semi Automatic Rifle</option>
+                            <option value="shotgun">Shotgun</option>
+                        </select>
+                    <div class="field">
+                        <label for="ammunition">Ammunition</label>
+                        <select name="ammunition" id="ammunition" required>
+                            <option value="" selected>--Please choose an option--</option>
+                            <option value="9mm">9mm</option>
+                            <option value=".45 ACP">.45 ACP</option>
+                            <option value="5.56x45mm">5.56x45mm</option>
+                            <option value="7.62x39mm">7.62x39mm</option>
+                            <option value=".308 Winchester">.308 Winchester</option>
+                            <option value="12ga">12ga</option>
+                        </select>
+                    </div>
+                    <button>submit</button>
+                    <a href="/">cancel</a>
+                </form>
+            </main>
+        </div>
+    </body>
+</html>

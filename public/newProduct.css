@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.field input{
+    min-width: 400px;
+}
+
+form{
+    border: 0.12rem slategray solid;
+    border-radius: 0.4rem;
+    padding: 2rem;
+    font-size: 2rem;
+}

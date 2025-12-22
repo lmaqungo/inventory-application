@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title><%=title%></title>
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <h2>Products:</h2>
+        <main>
+            <div class="upper">
+                <div class="left">
+                    <form action="" class="search">
+                        <input type="text" name="" placeholder="search">
+                        <button>SEARCH</button>
+                    </form>
+                    <form action="">
+                        <label for="category">Category</label>
+                        <select name="category" id="category">
+                            <option value="" selected></option>
+                            <option value="metalworking">metalworking</option>
+                            <option value="carpentry">carpentry</option>
+                            <option value="masonry">masonry</option>
+                        </select>
+                    </form>
+                </div>
+                <a id="new-product-btn" href="/new">Add new</a>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Ammunition Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach((product)=> { %>
+                            <tr>
+                                <td><%=product.id %></td>
+                                <td><%=product.model %></td>
+                                <td>R<%=product.price %></td>
+                                <td><%=product.quantity %></td>
+                                <td><%=product.category %></td>
+                                <td><%=product.ammunition %></td>
+                            </tr>
+                       <% })%>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </body>
+</html>
