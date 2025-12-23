@@ -11,25 +11,29 @@
                 <a href="/">Back to home</a>
             </header>
             <main>
-                <form action="/new" method="post">
+                <form action="/<%=product.id%>/edit" method="post">
                     <div class="field">
                         <label for="model">Model</label>
-                        <input type="text" name="model" id="model" required>
+                        <input type="text" name="model" id="model" required value="<%=product.model %>">
                     </div>
                     <div class="field">
                         <label for="price">Price</label>
-                        <input type="number" name="price" id="price" required>
+                        <input type="number" name="price" id="price" required value="<%=product.price %>">
                     </div>
                     <div class="field">
                         <label for="quantity">Quantity</label>
-                        <input type="number" name="quantity" id="quantity" value="1" required>
+                        <input type="number" name="quantity" id="quantity" required value="<%=product.quantity%>">
                     </div>
                     <div class="field">
                         <label for="category">Category</label>
                         <select name="category" id="category" required>
-                            <option value="" selected>--Please choose an option--</option>
+                            <option value="">--Please choose an option--</option>
                             <% categories.forEach((category)=> {%>
-                                <option value="<%=category.category%>"><%=category.category%></option>
+                                <% if(category.category=== product.category) {%>
+                                    <option value="<%=category.category%>" selected><%=category.category%></option>
+                                <%} else { %>
+                                    <option value="<%=category.category%>"><%=category.category%></option>
+                                <%}%>
                             <%}) %>
                         </select>
                     </div>
@@ -38,13 +42,17 @@
                         <select name="ammunition" id="ammunition" required>
                             <option value="" selected>--Please choose an option--</option>
                             <% ammunitions.forEach((ammunition)=> {%>
-                                <option value="<%=ammunition.ammunition%>"><%=ammunition.ammunition%></option>
+                                <% if(ammunition.ammunition===product.ammunition) {%>
+                                    <option value="<%=ammunition.ammunition%>" selected><%=ammunition.ammunition%></option>
+                                <%} else { %>
+                                    <option value="<%=ammunition.ammunition%>"><%=ammunition.ammunition%></option>
+                                <%}%>
                             <%}) %>
                         </select>
                     </div>
                     <div class="btn-container">
                         <button>submit</button>
-                        <a href="/">cancel</a>
+                        <a href="/<%=product.id %>">cancel</a>
                     </div>
                 </form>
             </main>

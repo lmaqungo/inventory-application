@@ -1,0 +1,25 @@
+body{
+    padding: 2rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.actions{
+    display: flex;
+    gap: 0.4rem;
+}
+
+.card p{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

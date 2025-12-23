@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1", 
     "dev": "node --watch app.js", 
-    "init-db": "node ./db/populatedb.js"
+    "init-db": "node ./db/populatedb.js", 
+    "drop-db": "node ./db/dropdb.js", 
+    "reset-db": "npm run drop-db && npm run init-db"
   },
   "repository": {
     "type": "git",

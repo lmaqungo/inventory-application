@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title><%= title%></title>
+        <link rel="stylesheet" href="/reset.css">
+        <link rel="stylesheet" href="/showProduct.css">
+    </head>
+    <body>
+        <main>
+            <div class="card">
+                <h2><%=product.model%></h2>
+                <p>ID:<%=product.id%></p>
+                <p>Price: R<%=product.price%></p>
+                <p>Quantity: <%=product.quantity%></p>
+                <p>Category: <%=product.category%></p>
+                <p>Ammunition: <%=product.ammunition%></p>
+            </div>
+            <div class="actions">
+                <a href="/">Back</a>
+                <a href="/<%=product.id%>/edit">Edit</a>
+                <form action="/<%= product.id%>/delete" method="post">
+                    <button>Delete</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

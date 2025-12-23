@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/index.css">
     </head>
     <body>
-        <h2>Products:</h2>
+        <h1>Products:</h1>
         <main>
             <div class="upper">
                 <div class="left">
@@ -17,9 +17,9 @@
                         <label for="category">Category</label>
                         <select name="category" id="category">
                             <option value="" selected></option>
-                            <option value="metalworking">metalworking</option>
-                            <option value="carpentry">carpentry</option>
-                            <option value="masonry">masonry</option>
+                            <% categories.forEach((category)=> {%>
+                                <option value="<%=category.category%>"><%=category.category%></option>
+                            <%}) %>
                         </select>
                     </form>
                 </div>
@@ -40,12 +40,36 @@
                     <tbody>
                         <% products.forEach((product)=> { %>
                             <tr>
-                                <td><%=product.id %></td>
-                                <td><%=product.model %></td>
-                                <td>R<%=product.price %></td>
-                                <td><%=product.quantity %></td>
-                                <td><%=product.category %></td>
-                                <td><%=product.ammunition %></td>
+                                <td>
+                                    <a href="/<%=product.id%>">
+                                        <%=product.id %>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/<%=product.id%>">
+                                        <%=product.model %>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/<%=product.id%>">
+                                        <%=product.price %>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/<%=product.id%>">
+                                        <%=product.quantity %>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/<%=product.id%>">
+                                        <%=product.category %>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/<%=product.id%>">
+                                        <%=product.ammunition %>
+                                    </a>
+                                </td>
                             </tr>
                        <% })%>
                     </tbody>
