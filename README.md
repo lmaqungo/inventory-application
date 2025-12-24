@@ -1,6 +1,6 @@
 # Inventory application
 
-Inventory management application of a weapons cache.
+Inventory management application of a weapon store.
 
 ## Features
 
