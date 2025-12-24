@@ -1,6 +1,6 @@
 # Inventory application
 
-Inventory management application of a weapon store.
+Inventory management application for a weapon store.
 
 ## Features
 
