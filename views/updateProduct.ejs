@@ -50,9 +50,16 @@
                             <%}) %>
                         </select>
                     </div>
-                    <div class="btn-container">
-                        <button>submit</button>
-                        <a href="/<%=product.id %>">cancel</a>
+                    <div class="lower">
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <%- include('partials/errors.ejs')%>
+                            <input type="text" name="password" id="password" placeholder="Enter password" required>
+                        </div>
+                        <div class="btn-container">
+                            <button>submit</button>
+                            <a href="/">cancel</a>
+                        </div>
                     </div>
                 </form>
             </main>

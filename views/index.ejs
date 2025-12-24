@@ -9,21 +9,22 @@
         <main>
             <div class="upper">
                 <div class="left">
-                    <form action="" class="search">
-                        <input type="text" name="" placeholder="search">
-                        <button>SEARCH</button>
+                    <form action="/results" class="search" method="get">
+                        <input type="text" name="searchQuery" placeholder="search">
+                        <button id="search-btn" class="btn">SEARCH</button>
                     </form>
-                    <form action="">
+                    <form action="/categories" method="get">
                         <label for="category">Category</label>
-                        <select name="category" id="category">
+                        <select name="categoryQuery" id="category" onchange="this.form.submit()">
                             <option value="" selected></option>
                             <% categories.forEach((category)=> {%>
                                 <option value="<%=category.category%>"><%=category.category%></option>
                             <%}) %>
                         </select>
                     </form>
+                    <a id="remove-filters-btn" class="btn" href="/">Remove Filters</a>
                 </div>
-                <a id="new-product-btn" href="/new">Add new</a>
+                <a id="new-product-btn" class="btn" href="/new">Add new</a>
             </div>
             <div class="table-container">
                 <table>
@@ -31,7 +32,7 @@
                         <tr>
                             <th scope="col">Id</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Price(R)</th>
                             <th scope="col">Quantity</th>
                             <th scope="col">Category</th>
                             <th scope="col">Ammunition Type</th>

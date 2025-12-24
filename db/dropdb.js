@@ -13,4 +13,6 @@ async function main(table) {
     console.log(`done`); 
 };
 
+main("categories"); 
+main("ammunitions"); 
 main("products"); 

@@ -7,7 +7,10 @@
     <body>
         <main>
             <div class="card">
-                <h2><%=product.model%></h2>
+                <div class="header">
+                    <h2><%=product.model%></h2>
+                    <a class="btn" id="back-btn" href="/">Back</a>
+                </div>
                 <p>ID:<%=product.id%></p>
                 <p>Price: R<%=product.price%></p>
                 <p>Quantity: <%=product.quantity%></p>
@@ -15,10 +18,14 @@
                 <p>Ammunition: <%=product.ammunition%></p>
             </div>
             <div class="actions">
-                <a href="/">Back</a>
-                <a href="/<%=product.id%>/edit">Edit</a>
+                <a class="btn" id="edit-btn" href="/<%=product.id%>/edit">Edit</a>
                 <form action="/<%= product.id%>/delete" method="post">
-                    <button>Delete</button>
+                    <div class="field">
+                        <label for="password">Password: </label>
+                        <%- include("partials/errors.ejs")%>
+                        <input type="text" name="password" id="password" placeholder="Enter password" required>
+                    </div>
+                    <button id="delete-btn" class="btn">Delete</button>
                 </form>
             </div>
         </main>

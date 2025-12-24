@@ -109,12 +109,64 @@ async function getProduct(id) {
     return rows[0];
 };
 
+async function deleteProduct(id) {
+    const SQL = `
+    DELETE FROM products
+    WHERE id = $1
+    `; 
+    await pool.query(SQL, [id]); 
+}; 
+
+async function searchProducts(query) {
+    const SQL = `
+    SELECT products.id, products.model, products.price, products.quantity, categories.category, ammunitions.ammunition 
+    FROM products
+    INNER JOIN categories
+    ON categories.id = products.category_id
+    INNER JOIN ammunitions
+    ON ammunitions.id = products.ammunition_id
+    WHERE products.model LIKE '%${query}%'
+    ORDER BY id ASC;
+    `;
+    try{
+        const { rows } = await pool.query(SQL);
+        console.log("products ", rows);
+        return rows;
+    } catch(err){
+        console.error(err)
+    }
+}; 
+
+async function getAllProductsByCategory(categoryQuery){
+    const SQL = `
+    SELECT products.id, products.model, products.price, products.quantity, categories.category, ammunitions.ammunition 
+    FROM products
+    INNER JOIN categories
+    ON categories.id = products.category_id
+    INNER JOIN ammunitions
+    ON ammunitions.id = products.ammunition_id
+    WHERE categories.category = '${categoryQuery}'
+    ORDER BY id ASC;
+    `;
+    try{
+        const { rows } = await pool.query(SQL);
+        console.log("products ", rows);
+        return rows;
+    } catch(err){
+        console.error(err)
+    }
+}
+
+
 module.exports = {
-    getAllCategories,
-    getAllAmmunitions,
+    getAllCategories, 
+    getAllAmmunitions, 
     getAllProducts, 
     createProduct, 
     getProduct, 
-    updateProduct
+    updateProduct, 
+    deleteProduct, 
+    searchProducts, 
+    getAllProductsByCategory
 };
 

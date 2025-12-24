@@ -11,16 +11,49 @@ body{
 
 form.search{
     display: flex;
+    gap: 0.4rem;
+}
+
+form input, form select{
+    padding: 0.1rem;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+}
+
+.search input{
+    padding-left: 0.5rem;
+}
+
+#search-btn{
+    padding: 0.1rem;
+    border: none
+}
+
+form label{
+    font-size: 1.2rem;
+}
+
+.btn{
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    padding: 0.3rem 0.5rem;
+    text-decoration: none;
+}
+
+.btn:hover{
+    outline: 1px solid black;
 }
 
 #new-product-btn{
     background-color: royalblue;
     border: transparent;
     color: white;
-    font-size: 1.2rem;
-    border-radius: 0.25rem;
-    padding: 0.2rem 0.5rem;
-    text-decoration: none;
+}
+
+#remove-filters-btn{
+    background-color: red;
+    color: white;
 }
 
 .upper{
