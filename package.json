@@ -8,7 +8,7 @@
     "init-db": "node ./db/populatedb.js", 
     "drop-db": "node ./db/dropdb.js", 
     "reset-db": "npm run drop-db && npm run init-db", 
-    "start": "npm run init-db $$ node app.js"
+    "start": "npm run init-db && node app.js"
   },
   "repository": {
     "type": "git",
